@@ -1,0 +1,38 @@
+[18/May/2018 19:14:08] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 36, in index
+    season.url_list.set(*link)
+TypeError: set() argument after * must be a sequence, not Links
+[18/May/2018 19:27:29] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 36, in index
+    return render(request, 'home/index.html', context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/backends/django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/loaders/base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/template/base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Unclosed tag on line 4: 'for'. Looking for one of: empty, endfor.

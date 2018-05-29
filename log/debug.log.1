@@ -1,0 +1,619 @@
+[18/May/2018 18:34:12] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 26, in index
+    season.url_list.add(link)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 843, in add
+    self._add_items(self.source_field_name, self.target_field_name, *objs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 988, in _add_items
+    new_ids = new_ids - set(vals)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "season_url_list"."links_id" FROM "season_url_list" W...
+                                                 ^
+
+[18/May/2018 18:38:09] WARNING [django.request:182] Not Found: /admin
+[18/May/2018 18:39:19] ERROR [django.request:284] Internal Server Error: /admin/series/season/6/change/
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1440, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    return func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1395, in changeform_view
+    form = ModelForm(instance=obj)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 282, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 105, in model_to_dict
+    data[f.name] = list(qs.values_list('pk', flat=True))
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "links"."id" FROM "links" INNER JOIN "season_url_list...
+                                                    ^
+
+[18/May/2018 18:42:36] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 26, in index
+    season.url_list.add(link)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 843, in add
+    self._add_items(self.source_field_name, self.target_field_name, *objs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 988, in _add_items
+    new_ids = new_ids - set(vals)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "season_url_list"."links_id" FROM "season_url_list" W...
+                                                 ^
+
+[18/May/2018 18:43:44] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 26, in index
+    season.url_list.add(link)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 843, in add
+    self._add_items(self.source_field_name, self.target_field_name, *objs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 988, in _add_items
+    new_ids = new_ids - set(vals)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "season_url_list"."links_id" FROM "season_url_list" W...
+                                                 ^
+
+[18/May/2018 18:44:36] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 27, in index
+    season.url_list.add(link)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 843, in add
+    self._add_items(self.source_field_name, self.target_field_name, *objs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 988, in _add_items
+    new_ids = new_ids - set(vals)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "season_url_list"."links_id" FROM "season_url_list" W...
+                                                 ^
+
+[18/May/2018 18:44:51] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 27, in index
+    season.url_list.add(link)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 843, in add
+    self._add_items(self.source_field_name, self.target_field_name, *objs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 988, in _add_items
+    new_ids = new_ids - set(vals)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "season_url_list"."links_id" FROM "season_url_list" W...
+                                                 ^
+
+[18/May/2018 18:48:55] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 24, in index
+    season.url_list.add(link)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 843, in add
+    self._add_items(self.source_field_name, self.target_field_name, *objs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 988, in _add_items
+    new_ids = new_ids - set(vals)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "season_url_list"."links_id" FROM "season_url_list" W...
+                                                 ^
+
+[18/May/2018 18:54:38] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 25, in index
+    season.link.add(link)
+AttributeError: 'Season' object has no attribute 'link'
+[18/May/2018 18:57:46] ERROR [django.request:284] Internal Server Error: /admin/series/season/6/change/
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1440, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    return func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1395, in changeform_view
+    form = ModelForm(instance=obj)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 282, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 105, in model_to_dict
+    data[f.name] = list(qs.values_list('pk', flat=True))
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "links"."id" FROM "links" INNER JOIN "season_url_list...
+                                                    ^
+
+[18/May/2018 18:58:07] ERROR [django.request:284] Internal Server Error: /admin/series/season/6/change/
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1440, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    return func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1395, in changeform_view
+    form = ModelForm(instance=obj)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 282, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 105, in model_to_dict
+    data[f.name] = list(qs.values_list('pk', flat=True))
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "links"."id" FROM "links" INNER JOIN "season_url_list...
+                                                    ^
+
+[18/May/2018 18:58:41] ERROR [django.request:284] Internal Server Error: /admin/series/season/6/change/
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1440, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    return func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1395, in changeform_view
+    form = ModelForm(instance=obj)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 282, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 105, in model_to_dict
+    data[f.name] = list(qs.values_list('pk', flat=True))
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "links"."id" FROM "links" INNER JOIN "season_url_list...
+                                                    ^
+
+[18/May/2018 19:00:22] ERROR [django.request:284] Internal Server Error: /admin/series/season/6/change/
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1440, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    return func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1395, in changeform_view
+    form = ModelForm(instance=obj)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 282, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 105, in model_to_dict
+    data[f.name] = list(qs.values_list('pk', flat=True))
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "links"."id" FROM "links" INNER JOIN "season_url_list...
+                                                    ^
+
+[18/May/2018 19:01:03] ERROR [django.request:284] Internal Server Error: /admin/series/season/6/change/
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1440, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    return func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1395, in changeform_view
+    form = ModelForm(instance=obj)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 282, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 105, in model_to_dict
+    data[f.name] = list(qs.values_list('pk', flat=True))
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "links"."id" FROM "links" INNER JOIN "season_url_list...
+                                                    ^
+
+[18/May/2018 19:02:53] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 35, in index
+    season.url_list.add(*link)
+TypeError: add() argument after * must be a sequence, not Links
+[18/May/2018 19:04:18] ERROR [django.request:284] Internal Server Error: /admin/series/season/6/change/
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 541, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 244, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1440, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 149, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/utils/decorators.py", line 184, in inner
+    return func(*args, **kwargs)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1395, in changeform_view
+    form = ModelForm(instance=obj)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 282, in __init__
+    object_data = model_to_dict(instance, opts.fields, opts.exclude)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/forms/models.py", line 105, in model_to_dict
+    data[f.name] = list(qs.values_list('pk', flat=True))
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 258, in __iter__
+    self._fetch_all()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 158, in __iter__
+    for row in compiler.results_iter():
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 802, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: SELECT "links"."id" FROM "links" INNER JOIN "season_url_list...
+                                                    ^
+
+[18/May/2018 19:04:34] ERROR [django.request:284] Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/afsal/workspace/movieList/app/home/views.py", line 35, in index
+    season.url_list.clear()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/fields/related_descriptors.py", line 869, in clear
+    self.through._default_manager.using(db).filter(filters).delete()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 600, in delete
+    deleted, _rows_count = collector.delete()
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/deletion.py", line 292, in delete
+    count = qs._raw_delete(using=self.using)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/query.py", line 614, in _raw_delete
+    return sql.DeleteQuery(self.model).delete_qs(self, using)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/subqueries.py", line 81, in delete_qs
+    cursor = self.get_compiler(using).execute_sql(CURSOR)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/afsal/workspace/env_movie/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+ProgrammingError: relation "season_url_list" does not exist
+LINE 1: DELETE FROM "season_url_list" WHERE "season_url_list"."seaso...
+                    ^
+
